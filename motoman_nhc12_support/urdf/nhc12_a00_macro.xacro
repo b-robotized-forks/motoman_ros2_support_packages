@@ -1,0 +1,225 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="motoman_nhc12_a00" params="prefix">
+
+    <!-- link list -->
+    <link name="${prefix}base_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/visual/base_link.obj"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/collision/base_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.022144404 -0.00060967143 0.052911239" rpy="0 0 0"/>
+        <mass value="4.6498392"/>
+        <inertia ixx="0.0146078644956029" ixy="-0.000276341412323044" ixz="0.000537616793018706" iyy="0.0227853886670026" iyz="0.00000217089820155742" izz="0.0268550734878894"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_1">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/visual/link_1.obj"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/collision/link_1.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.00036956642 -0.05034427 -0.036923562" rpy="0 0 0"/>
+        <mass value="13.748998"/>
+        <inertia ixx="0.133682560092482" ixy="0.0023905218078308" ixz="-0.0012257144205523" iyy="0.0830018335740159" iyz="0.0259842250444297" izz="0.101065900860355"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/visual/link_2.obj"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/collision/link_2.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.34299764 0.012265307 0.19505835" rpy="0 0 0"/>
+        <mass value="12.110461"/>
+        <inertia ixx="0.0441635" ixy="0.00439107" ixz="0.0630725" iyy="0.787469" iyz="-0.00384852" izz="0.783826"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_3">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/visual/link_3.obj"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/collision/link_3.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.0049383895 -0.04766073 0.024343582" rpy="0 0 0"/>
+        <mass value="4.5800222"/>
+        <inertia ixx="0.0268506437430011" ixy="0.000286804573714973" ixz="-0.000758253139856238" iyy="0.0154802729491161" iyz="-0.00561336181849179" izz="0.0215930994628515"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_4">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/visual/link_4.obj"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/collision/link_4.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.00011272441 0.063309838 -0.25277833" rpy="0 0 0"/>
+        <mass value="5.1334981"/>
+        <inertia ixx="0.231353980363021" ixy="0.00000218821043137807" ixz="-0.000013540883873718" iyy="0.210483801556142" iyz="-0.0635263111134931" izz="0.0337420613462879"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_5">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/visual/link_5.obj"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/collision/link_5.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0011287463 -0.01309239 0.027587746" rpy="0 0 0"/>
+        <mass value="4.4209558"/>
+        <inertia ixx="0.0152953274505425" ixy="0.000333112943673941" ixz="0.000716938295902348" iyy="0.0131352388731564" iyz="-0.00234327190690263" izz="0.0104222783789029"/>
+      </inertial>
+    </link>
+
+    <link name="${prefix}link_6">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/visual/link_6.obj"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_nhc12_support/meshes/collision/link_6.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.00018918869 -0.00064415444 -0.036409034" rpy="0 0 0"/>
+        <mass value="1.9383425"/>
+        <inertia ixx="0.00313666547718047" ixy="0.0000151220465288698" ixz="0.00000200661890766439" iyy="0.00312685498536101" iyz="0.0000225123999446856" izz="0.00371066833611269"/>
+      </inertial>
+    </link>
+    <!-- end of link list -->
+
+    <!-- joint list -->
+    <!-- Joints are specified such that the driver rotates the joints about the positive X axis. -->
+    <joint name="${prefix}joint_1" type="revolute">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <axis xyz="0 0 1"/>
+      <origin rpy="0 0 0" xyz="0 0 0.245"/>
+      <limit lower="${radians(-210)}" upper="${radians(210)}" effort="395" velocity="${radians(130)}"/>
+    </joint>
+
+    <joint name="${prefix}joint_2" type="revolute">
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <axis xyz="0 0 -1"/>
+      <origin rpy="${radians(90)} ${radians(-90)} 0" xyz="0 0 0"/>
+      <limit lower="${radians(-180)}" upper="${radians(180)}" effort="395" velocity="${radians(130)}"/>
+    </joint>
+
+    <joint name="${prefix}joint_3" type="revolute">
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <axis xyz="0 0 1"/>
+      <origin rpy="0 0 0" xyz="0.6 0 0"/>
+      <limit lower="${radians(-73)}" upper="${radians(253)}" effort="178" velocity="${radians(180)}"/>
+    </joint>
+
+    <joint name="${prefix}joint_4" type="revolute">
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <axis xyz="0 0 -1"/>
+      <origin rpy="${radians(90)} 0 0" xyz="0 -0.65 0"/>
+      <limit lower="${radians(-210)}" upper="${radians(210)}" effort="57.6" velocity="${radians(180)}"/>
+    </joint>
+
+    <joint name="${prefix}joint_5" type="revolute">
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <axis xyz="0 0 1"/>
+      <origin rpy="${radians(-90)} 0 0" xyz="0 0 0"/>
+      <limit lower="${radians(-90)}" upper="${radians(270)}" effort="39" velocity="${radians(250)}"/>
+    </joint>
+
+    <joint name="${prefix}joint_6" type="revolute">
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <axis xyz="0 0 -1"/>
+      <origin rpy="${radians(90)} 0 ${radians(-90)}" xyz="-0.16 0 0"/>
+      <limit lower="${radians(-210)}" upper="${radians(210)}" effort="31.2" velocity="${radians(250)}"/>
+    </joint>
+    <!-- end of joint list -->
+
+    <!-- ROS base_link to Robot Manufacturer World Coordinates transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
+      <origin xyz="0 0 0.245" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+    </joint>
+
+    <!-- ROS-Industrial 'flange' frame - attachment point for EEF models -->
+    <link name="${prefix}flange"/>
+    <joint name="${prefix}joint_6-flange" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians(180)} ${radians(-90)} 0"/>
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}flange"/>
+    </joint>
+
+    <!-- ROS-Industrial 'tool0' frame - all-zeros tool frame -->
+    <link name="${prefix}tool0"/>
+    <joint name="${prefix}joint_6-tool0" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}tool0"/>
+    </joint>
+
+    <!-- camera frame  - ROS convention. X forward, Y left, Z up-->
+    <!-- <link name="${prefix}camera_link"/>
+    <joint name="${prefix}joint_1_to_camera_link_optical" type="fixed">
+      <origin xyz="0.0341 0.00441 0.058" rpy="0 0 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}camera_link"/>
+    </joint> -->
+
+    <!-- camera optical camera frame. X right, Y down, Z forward -->
+    <!-- <link name="${prefix}camera_link_optical"/>
+    <joint name="${prefix}camera_link_to_camera_link_optical" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians(-90)} 0 ${radians(-90)}"/>
+      <parent link="${prefix}camera_link"/>
+      <child link="${prefix}camera_link_optical"/>
+    </joint> -->
+
+  </xacro:macro>
+</robot>

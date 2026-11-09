@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>motoman_nhc12_support</name>
+  <version>0.0.0</version>
+  <description>
+    <p>ROS2 support for the Motoman NHC12 (and variants).</p>
+    <p>
+      This package contains configuration data, 3D models and launch files
+      for Motoman NHC12 manipulators.
+    </p>
+    <p>
+      <b>Specifications</b>
+    </p>
+    <ul>
+      <li>NHC12 - YR-N1-06VXC12-A00 (Standard Specification)</li>
+    </ul>
+    <p>
+      Joint limits and max joint velocities are based on the information in the
+      <em>MOTOMAN NEXT-NHC12 INSTRUCTIONS (HW2481247)</em>, version
+      <em>xxxxxx-xCD, rev x</em>.
+      All URDFs / XACROs are based on the default motion and joint velocity
+      limits, unless noted otherwise (ie: no support for high speed joints,
+      extended / limited motion ranges or other options).
+    </p>
+    <p>
+      Before using any of the configuration files and / or meshes included
+      in this package, be sure to check they are correct for the particular
+      robot model and configuration you intend to use them with.
+    </p>
+  </description>
+  <maintainer email="jimmy.mcelwain@motoman.com">Jimmy McElwain</maintainer>
+  <license>Apache-2.0</license>
+
+  <url type="bugtracker">https://github.com/yaskawa-global/motoman_ros2_support_packages/issues</url>
+  <url type="repository">https://github.com/yaskawa-global/motoman_ros2_support_packages</url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>motoman_resources</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
